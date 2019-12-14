@@ -1,9 +1,9 @@
 [submodule "MAE_to_CSV"]
-	path = MAE_to_CSV
+	path = ig-cogito
 	url = https://github.com/MichalTurski/MAE_to_CSV/
 [submodule "ig-annotator"]
 	path = ig-annotator
 	url = https://github.com/rzepinskip/ig-annotator/
 [submodule "relvis"]
-	path = relvis
+	path = ig-visualization
 	url = https://github.com/JanSawicki/relvis
