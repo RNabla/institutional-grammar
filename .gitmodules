@@ -1,3 +1,6 @@
 [submodule "MAE_to_CSV"]
 	path = MAE_to_CSV
 	url = https://github.com/MichalTurski/MAE_to_CSV/
+[submodule "ig-annotator"]
+	path = ig-annotator
+	url = https://github.com/rzepinskip/ig-annotator/
