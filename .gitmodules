@@ -4,6 +4,7 @@
 [submodule "ig-annotator"]
 	path = ig-annotator
 	url = https://github.com/rzepinskip/ig-annotator/
+	branch = package
 [submodule "relvis"]
 	path = ig-visualization
 	url = https://github.com/JanSawicki/relvis
