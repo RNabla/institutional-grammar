@@ -3,8 +3,8 @@ from pathlib import Path
 
 import igannotator.main
 import igcogito.main
-from igcogito.XML_parser.xls import MAEToXLSParser
-# import igrelations.main
+import igcogito.XML_parser.xls 
+import igrelations.main
 
 def setup_io(output_dir_path):
     if output_dir_path.exists() and not output_dir_path.is_dir():
@@ -22,13 +22,15 @@ def create_mae_file(input_file_path, output_file_path):
 def create_xls_file(mae_file_path, output_file_path, mae_schema=None):
     if mae_schema == None:
         mae_schema = str(Path(__file__).parents[0] / 'mae_schema.xsd')
-    print(mae_schema, mae_file_path)
-    mae_parser = MAEToXLSParser(mae_schema, str(mae_file_path))
+    mae_parser = igcogito.XML_parser.xls.MAEToXLSParser(mae_schema, str(mae_file_path))
     mae_parser.parse_xml(str(output_file_path))
 
 def create_csv_file(xls_file_path, output_file_path):
     with open(str(xls_file_path), 'rb') as f:
         igcogito.main.cogito(f, str(output_file_path))
+
+def create_relations(csv_file_path, output_dir):
+    igrelations.main.main(csv_file_path, output_dir)
 
 
 @click.command()
@@ -40,10 +42,9 @@ def console_entry(input_file, output_dir, mae_schema):
     output_dir_path = Path(output_dir)
     setup_io(output_dir_path)
     mae_file_path = get_output_filepath(input_file_path, output_dir_path, '_mae.xml')
-    # create_mae_file(input_file_path, mae_file_path)
+    create_mae_file(input_file_path, mae_file_path)
     xls_file_path = get_output_filepath(input_file_path, output_dir_path, '_excel.xls')
     create_xls_file(mae_file_path, xls_file_path, mae_schema=mae_schema)
     csv_file_path = get_output_filepath(input_file_path, output_dir_path, '_csv.csv')
     create_csv_file(xls_file_path, csv_file_path)
-    
-    pass
+    create_relations(csv_file_path, output_dir_path / 'relations')

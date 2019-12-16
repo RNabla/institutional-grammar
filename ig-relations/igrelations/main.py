@@ -10,7 +10,6 @@ def main(input_file, output_dir):
     df = pd.read_csv(input_file)
     df.aim_category = pd.Categorical(df.aim_category)
     for aim_category in df.aim_category.cat.categories:
-        print(aim_category)
         output_file = (output_dir / aim_category).with_suffix('.csv')
         df[df.aim_category == aim_category].pivot_table(
             index='active_actor',
