@@ -1,3 +1,5 @@
+pip install wheel
+
 cd ig-annotator
 chmod +x ./build.sh
 ./build.sh

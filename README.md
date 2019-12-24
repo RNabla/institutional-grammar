@@ -9,6 +9,13 @@ Prerequisted:
 - `python` points to Python 3.6+
 - `pip` points to Pip for Python 3.6+
 
+0. Clone this repository
+
+```bash
+git clone https://github.com/RNabla/institutional-grammar --recurse-submodules
+cd instititutional-grammar
+```
+
 1. Create virtual environment
 
 ```bash
