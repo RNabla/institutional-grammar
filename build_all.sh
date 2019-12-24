@@ -1,6 +1,3 @@
-python -m venv .env
-source .env/bin/activate
-
 cd ig-annotator
 chmod +x ./build.sh
 ./build.sh
