@@ -9,24 +9,25 @@ Prerequisted:
 - `python` points to Python 3.6+
 - `pip` points to Pip for Python 3.6+
 
-0. Clone this repository
+1. Clone this repository
 
 ```bash
 git clone https://github.com/RNabla/institutional-grammar --recurse-submodules
 cd instititutional-grammar
 ```
 
-1. Create virtual environment
+2. Create virtual environment
 
 ```bash
 python -m venv venv
 source venv/bin/activate
 ```
-2. Run installation script
+
+3. Run installation script
 
 ```bash
 chmod +x ./build_all.sh
-sudo -H ./build_all.sh
+./build_all.sh
 ```
 
 ## Scripts
