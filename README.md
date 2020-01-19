@@ -48,7 +48,7 @@ ig_annotator INPUT_FILE OUTPUT_FILE
 This script takes single mae file and creates corresponding document in xls format.
 
 ```bash
-ig_annotator MAE_FILE OUTPUT_FILE
+ig_xml_to_xls MAE_FILE OUTPUT_FILE
 ```
 
 - MAE_FILE - path to file containing annotated document in MAE format 
